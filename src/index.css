@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 15% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 13% 45%;
+
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 15% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom Forex Theme Colors */
+    --hero-gradient-from: 221 83% 53%;
+    --hero-gradient-to: 220 15% 10%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --chart-blue: 217 91% 60%;
+    --chart-green: 142 76% 36%;
+    --premium-gold: 43 96% 56%;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 13% 65%;
+
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 15% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 221 83% 53%;
+
+    --hero-gradient-from: 221 83% 53%;
+    --hero-gradient-to: 220 15% 5%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --chart-blue: 217 91% 60%;
+    --chart-green: 142 76% 36%;
+    --premium-gold: 43 96% 56%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}

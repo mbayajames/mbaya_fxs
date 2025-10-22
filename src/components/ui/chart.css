@@ -1,0 +1,18 @@
+.indicator {
+  --indicator-color: initial;
+}
+
+.indicator-dot {
+  background-color: var(--indicator-color);
+  border-color: var(--indicator-color);
+}
+
+.indicator-line {
+  background-color: var(--indicator-color);
+  border-color: var(--indicator-color);
+}
+
+.indicator-dashed {
+  background-color: transparent;
+  border-color: var(--indicator-color);
+}
