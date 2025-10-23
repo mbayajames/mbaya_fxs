@@ -1,10 +1,11 @@
 // form-components.tsx (Styled and Animated Form Components)
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { FormFieldContext, FormItemContext } from "./form-context";
 import { useFormField } from "./use-form-field";
+import { FieldValues, FieldPath } from "react-hook-form";
 
 interface FormFieldProps<
   TFieldValues extends FieldValues = FieldValues,
@@ -35,7 +36,7 @@ const FormItem = ({ className, children, ...props }: React.HTMLAttributes<HTMLDi
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         className={cn("space-y-2", className)}
-        {...props}
+        {...(props as HTMLMotionProps<"div">)}
       >
         {children}
       </motion.div>
@@ -53,7 +54,7 @@ const FormLabel = ({ className, ...props }: React.HTMLAttributes<HTMLLabelElemen
       transition={{ duration: 0.3, ease: "easeOut" }}
       htmlFor={formItemId}
       className={cn("block text-sm font-medium text-blue-300", className)}
-      {...props}
+      {...(props as HTMLMotionProps<"label">)}
     />
   );
 };
@@ -92,7 +93,7 @@ const FormDescription = ({ className, ...props }: React.HTMLAttributes<HTMLParag
       transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
       id={formDescriptionId}
       className={cn("text-sm text-blue-200/80", className)}
-      {...props}
+      {...(props as HTMLMotionProps<"p">)}
     />
   );
 };
@@ -110,7 +111,7 @@ const FormMessage = ({ className, children, ...props }: React.HTMLAttributes<HTM
       transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
       id={formMessageId}
       className={cn("text-sm font-medium text-red-500", className)}
-      {...props}
+      {...(props as HTMLMotionProps<"p">)}
     >
       {body}
     </motion.p>
